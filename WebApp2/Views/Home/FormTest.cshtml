@@ -1,0 +1,47 @@
+﻿@model IEnumerable<WebApp2.Models.Products>
+
+@{
+    ViewBag.Title = "FormTest";
+}
+
+<h2>FormTest</h2>
+
+<table class="table table-hover table-striped">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UnitPrice)
+        </th>
+      <th></th>
+        
+    </tr>
+
+    @foreach (var item in Model)
+    {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProductID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProductName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UnitPrice)
+        </td>
+
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { },new {@class="btn btn-primary"}) |
+            @Html.ActionLink("Details", "Details", new { } ,new { @class = "btn btn-danger" } ) |
+            @Html.ActionLink("Delete", "Delete", new { }, new { @class = "btn btn-success" })
+        </td>
+
+
+    </tr>
+    }
+
+</table>

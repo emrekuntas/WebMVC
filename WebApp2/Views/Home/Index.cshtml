@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+@{
+
+
+
+
+}
+<h2>Index</h2>
+@using(
+@Html.BeginForm("FormTest", "Home", FormMethod.Post))
+{@Html.Label("Urun Adi");
+@Html.TextBox("UrunAdi");
+
+@Html.Label("Fiyat");
+@Html.TextBox("Fiyat");
+@Html.DropDownList("kategori", new SelectList(ViewBag.Category, "CategoryId", "CategoryName"));
+<input type="submit" id="kaydet" value="Kaydet" />}
