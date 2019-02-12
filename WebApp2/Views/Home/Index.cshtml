@@ -9,13 +9,18 @@
 
 
 }
-<h2>Index</h2>
-@using(
-@Html.BeginForm("FormTest", "Home", FormMethod.Post))
-{@Html.Label("Urun Adi");
-@Html.TextBox("UrunAdi");
+<div class="form-group">
+    <h2 class="text-center text-danger">Index</h2>
+    @using (
+    @Html.BeginForm("FormTest", "Home", FormMethod.Post))
+    {@Html.Label("Urun Adi");
+    @Html.TextBox("UrunAdi", "", new { @class = "form-control" });
 
-@Html.Label("Fiyat");
-@Html.TextBox("Fiyat");
-@Html.DropDownList("kategori", new SelectList(ViewBag.Category, "CategoryId", "CategoryName"));
-<input type="submit" id="kaydet" value="Kaydet" />}
+    @Html.Label("Fiyat");
+    @Html.TextBox("Fiyat", "", new { @class = "form-control" });
+
+    @Html.Label("kategori");
+    @Html.DropDownList("kategori", new SelectList(ViewBag.Category, "CategoryId", "CategoryName"), new { @class = "form-control " });
+    <input type="submit" id="kaydet" value="Kaydet" class="btn btn-primary" />}
+</div>
+@Html.ActionLink("Student","Index","students")
